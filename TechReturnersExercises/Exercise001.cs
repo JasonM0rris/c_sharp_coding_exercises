@@ -7,32 +7,48 @@ namespace TechReturners.Exercises
     {
         public static String CapitalizeWord(String word) 
         {
-            // Add your code here!
-            throw new NotImplementedException();
+            string capitalizedWord = word.ToUpper();
+            return capitalizedWord;
+            
         }
 
         public static String GenerateInitials(String firstName, String lastName) 
         {
-            // Add your code here!
-            throw new NotImplementedException();
+            string firstNameInitial = firstName.Substring(0, 1);
+            string lastNameInitial = lastName.Substring(0, 1);
+
+            string nameInitials = firstNameInitial.ToUpper() + " " + lastNameInitial.ToUpper();
+            return nameInitials;
+        
         }
 
         public static double AddVat(double originalPrice, double vatRate) 
         {
-            // Add your code here!
-            throw new NotImplementedException();
+            double priceIncludingVAT = originalPrice + originalPrice * vatRate;
+            return priceIncludingVAT;
+          
         }
 
         public static String Reverse(String sentence) 
         {
-            // Add your code here!
-            throw new NotImplementedException();
+            string reversedString = string.Empty;
+            for (int cnt = sentence.Length - 1; cnt >= 0; cnt--)
+            {
+                reversedString += sentence[cnt];
+            }
+            return reversedString;
+           
         }
 
         public static int CountLinuxUsers(List<User> users) 
         {
-            // Add your code here!
-            throw new NotImplementedException();
+            int userCount = users.Count;
+            return userCount;
+           
         }
     }
+    // public class User
+    // {
+    //     public string Name { get; set; }
+    // }
 }
