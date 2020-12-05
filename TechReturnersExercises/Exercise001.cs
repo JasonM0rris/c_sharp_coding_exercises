@@ -1,54 +1,39 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace TechReturners.Exercises
 {
     public class Exercise001
     {
-        public static String CapitalizeWord(String word) 
+        public static String CapitalizeWord(String word)
         {
-            string capitalizedWord = word.ToUpper();
-            return capitalizedWord;
+            return char.ToUpper(word[0]) + word.Substring(1);
+        }
+
+        public static String GenerateInitials(String firstName, String lastName)
+        {
+            return char.ToUpper(firstName[0]) + "." + char.ToUpper(lastName[0]);
             
         }
 
-        public static String GenerateInitials(String firstName, String lastName) 
+        public static double AddVat(double originalPrice, double vatRate)
         {
-            string firstNameInitial = firstName.Substring(0, 1);
-            string lastNameInitial = lastName.Substring(0, 1);
+            return Math.Round(((originalPrice * vatRate) / 100) + originalPrice, 2);
+            
+        }
 
-            string nameInitials = firstNameInitial.ToUpper() + " " + lastNameInitial.ToUpper();
-            return nameInitials;
+        public static String Reverse(String sentence)
+        {
+            return string.Join(" ", sentence.Split(' ').Reverse().Select(x => new String(x.Reverse().ToArray())));
+            
+        }
+
+        public static int CountLinuxUsers(List<User> users)
+        {
+            return users.Count(x => x.Type == "Linux");
+            
+        }
         
-        }
-
-        public static double AddVat(double originalPrice, double vatRate) 
-        {
-            double priceIncludingVAT = originalPrice + originalPrice * vatRate;
-            return priceIncludingVAT;
-          
-        }
-
-        public static String Reverse(String sentence) 
-        {
-            string reversedString = string.Empty;
-            for (int cnt = sentence.Length - 1; cnt >= 0; cnt--)
-            {
-                reversedString += sentence[cnt];
-            }
-            return reversedString;
-           
-        }
-
-        public static int CountLinuxUsers(List<User> users) 
-        {
-            int userCount = users.Count;
-            return userCount;
-           
-        }
-    }
-    public class Person
-    {
-        public string Name { get; set; }
     }
 }
